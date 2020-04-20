@@ -1,0 +1,12 @@
+<%= form_for (book) do |f| %>
+
+	<%= f.label :Title %><br>
+	<%= f.text_field :title, class: "col-xs-12" %><br />
+
+	<%= f.label :Opinion %><br>
+	<%= f.text_area :body, class: "col-xs-12" %>
+
+	<%= f.submit class: "col-xs-12 btn btn-info" %>
+	
+
+<% end %>
