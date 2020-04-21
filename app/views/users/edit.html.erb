@@ -1,18 +1,27 @@
 <div class="row">
-	<div class="col-xs-3">
+	<div class="col-xs-6 col-xs-offset-3">
 		<h2>User info</h2>
+		<%= render "layouts/errors", model: @user %>
+
 		<%= form_for(@user) do |f| %>
 
-			<%= f.label :name %>
-			<%= f.text_field :name %>
+			<div class="field">
+				<%= f.label :image %>
+				<%= f.attachment_field :profile_image %>
+			</div>
 
-			<%= f.label :image %>
-			<%= f.attachment_field :profile_image %>
+			<div class="field">
+				<%= f.label :name %><br />
+				<%= f.text_field :name, class: "col-xs-12" %>
+			</div>
 
-			<%= f.label :introduction %>
-			<%= f.text_area :introduction %>
+			<div class="field">
+				<%= f.label :introduction %><br />
+				<%= f.text_area :introduction, class: "col-xs-12" %>
+			</div>
 
-			<%= f.submit "Update User" %>
+			<%= f.submit "Update User", class: "btn btn-success col-xs-12", style: "magin-top:10px;" %>
+
 		<% end %>
 	</div>
 </div>
